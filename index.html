@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botanico Bistrò - Il nostro Menù</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+        }
+        
+        .dish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-category:target {
+            padding-top: 80px;
+            margin-top: -80px;
+        }
+        
+        .active-category {
+            background-color: #b91c1c;
+            color: white;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-dish {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-serif bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-center">
+            <div class="flex items-center">
+                <i class="fas fa-utensils text-3xl text-green-700 mr-2"></i>
+                <h1 class="text-2xl font-bold text-gray-800">Botanico Bistro</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image flex items-center justify-center pt-20">
+        <div class="text-center px-4">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 animate__animated animate__fadeInDown">Il nostro Menù</h1>
+            <p class="text-xl md:text-2xl text-white max-w-2xl mx-auto">Tradizione e innovazione in ogni piatto</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories Navigation -->
+    <section class="bg-white py-6 sticky top-16 z-40 shadow-sm">
+        <div class="container mx-auto px-4 overflow-x-auto">
+            <div class="flex space-x-2 md:space-x-4 justify-center md:justify-start">
+                <a href="#stuzzicheria" class="category-nav-btn px-4 py-2 rounded-full whitespace-nowrap bg-gray-100 hover:bg-green-700 hover:text-white transition">Stuzzicheria</a>
+                <a href="#hamburger-carne" class="category-nav-btn px-4 py-2 rounded-full whitespace-nowrap bg-gray-100 hover:bg-green-700 hover:text-white transition">Hamburger di carne</a>
+                <a href="#hamburger-pesce" class="category-nav-btn px-4 py-2 rounded-full whitespace-nowrap bg-gray-100 hover:bg-green-700 hover:text-white transition">Hamburger di pesce</a>
+                <a href="#bevande" class="category-nav-btn px-4 py-2 rounded-full whitespace-nowrap bg-gray-100 hover:bg-green-700 hover:text-white transition">Bevande</a>
+                <a href="#drink" class="category-nav-btn px-4 py-2 rounded-full whitespace-nowrap bg-gray-100 hover:bg-green-700 hover:text-white transition">Drink</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Stuzzicheria -->
+        <section id="stuzzicheria" class="menu-category mb-16 scroll-mt-16">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-seedling text-3xl text-green-700 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Stuzzicheria</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- La nostra piramide -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">La nostra piramide</h3>
+                            <span class="text-lg font-semibold text-green-700">€28,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Antipasti caldi, freddi, fritti</p>
+                        <p class="text-sm text-gray-500">Per 2 persone</p>
+                    </div>
+                </div>
+                
+                <!-- Polpette di pesce -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Polpette di pesce</h3>
+                            <span class="text-lg font-semibold text-green-700">€9,00</span>
+                        </div>
+                        <p class="text-sm text-gray-500">10 pezzi</p>
+                    </div>
+                </div>
+
+                <!-- Olive di pesce -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Olive di pesce</h3>
+                            <span class="text-lg font-semibold text-green-700">€10,00</span>
+                        </div>
+                        <p class="text-sm text-gray-500">10 pezzi</p>
+                    </div>
+                </div>
+
+                <!-- Olive ascolane -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Olive ascolane</h3>
+                            <span class="text-lg font-semibold text-green-700">€10,00</span>
+                        </div>
+                        <p class="text-sm text-gray-500">10 pezzi</p>
+                    </div>
+                </div>
+
+                <!-- Fritto misto di pesce -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Fritto misto di pesce</h3>
+                            <span class="text-lg font-semibold text-green-700">€12,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cremigni -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Cremigni</h3>
+                            <span class="text-lg font-semibold text-green-700">€8,00</span>
+                        </div>
+                        <p class="text-sm text-gray-500">10 pezzi</p>
+                    </div>
+                </div>
+
+                <!-- Patate fritte -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Patate fritte</h3>
+                            <span class="text-lg font-semibold text-green-700">€5,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tagliere di salumi e formaggi -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Tagliere di salumi e formaggi</h3>
+                            <span class="text-lg font-semibold text-green-700">€15,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hamburger di carne -->
+        <section id="hamburger-carne" class="menu-category mb-16 scroll-mt-16">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-hamburger text-3xl text-green-700 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Hamburger di carne</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Veganburger -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Veganburger</h3>
+                            <span class="text-lg font-semibold text-green-700">€11,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Burger di ceci, zucchine, maionese vegana, pesto di rucola</p>
+                    </div>
+                </div>
+                
+                <!-- Chickenburger -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Chickenburger</h3>
+                            <span class="text-lg font-semibold text-green-700">€13,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Hamburger di pollo, rucola, pomodoro, caciocavallo, maionese aromatizzata al cetriolo</p>
+                    </div>
+                </div>
+                
+                <!-- Il Contadino -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Il Contadino</h3>
+                            <span class="text-lg font-semibold text-green-700">€13,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Hamburger di carne, caciocavallo, maionese aromatizzata al cetriolo, cipolla rossa di Tropea, insalata, pomodorini secchi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hamburger di pesce -->
+        <section id="hamburger-pesce" class="menu-category mb-16 scroll-mt-16">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-fish text-3xl text-green-700 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Hamburger di pesce</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Buttami giù -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Buttami giù</h3>
+                            <span class="text-lg font-semibold text-green-700">€14,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Tonno marinato, stracciatella, pesto di pistacchi, pom., rucola</p>
+                    </div>
+                </div>
+                
+                <!-- Botanico burger -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Botanico burger</h3>
+                            <span class="text-lg font-semibold text-green-700">€13,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sgombro, caciocavallo, cime di rapa, cipolla marinata, pesto di rucola</p>
+                    </div>
+                </div>
+                <!-- Octopus -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Octopus</h3>
+                            <span class="text-lg font-semibold text-green-700">€15,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Polpo alla luciana, caciotta di pecora, cime di rapa, patata cips, glassa d'aceto balsamico </p>
+                    </div>
+                </div>
+                <!-- El salmonar -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">El salmonar</h3>
+                            <span class="text-lg font-semibold text-green-700">€14,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"> Tartare di salmone, stracciatella, ruccola, pomodoro, salsa botanico </p>
+                    </div>
+                </div>
+                <!-- Seppiolotto -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Seppiolotto</h3>
+                            <span class="text-lg font-semibold text-green-700">€14,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Insalata di seppia, pomodoro, pesto di rucola, glassa d'aceto balsamico</p>
+                    </div>
+                </div>
+                <!-- Gamburger -->
+                <div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 animate-dish">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Gamburger</h3>
+                            <span class="text-lg font-semibold text-green-700">€14,00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Gamberi, stracciatella, pesto al pistaccho, verdure grigliate, rucola</p>
+                    </div>
+                </div>
+
+        <!-- Bevande -->
+        <section id="bevande" class="menu-category mb-16 scroll-mt-16">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-glass-martini-alt text-3xl text-green-700 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Bevande</h2>
+            </div>
+            <div class="bg-green-50 p-6 rounded-lg space-y-4">
+                <p class="font-semibold">Acqua liscia o frizzante 75cl <span class="float-right text-green-700">€2,00</span></p>
+                <p class="font-semibold">Coca Cola 33cl <span class="float-right text-green-700">€3,00</span></p>
+                <p class="font-semibold">Fanta 33cl <span class="float-right text-green-700">€3,00</span></p>
+                <p class="font-semibold">Tonica <span class="float-right text-green-700">€3,00</span></p>
+                <p class="font-semibold">Amari <span class="float-right text-green-700">€3,00</span></p>
+                <p class="font-semibold">Rum <span class="float-right text-green-700">€5,00</span></p>
+                <p class="font-semibold">Whisky <span class="float-right text-green-700">€5,00</span></p>
+                <p class="font-semibold">Caffè <span class="float-right text-green-700">€1,20</span></p>
+                <p class="font-semibold">Decaffeinato <span class="float-right text-green-700">€1,50</span></p>
+                <p class="font-semibold">Caffè corretto <span class="float-right text-green-700">€1,50</span></p>
+                <p class="font-semibold">Birra Fischer Chiara 0,2lt <span class="float-right text-green-700">€2,50</span></p>
+                <p class="font-semibold">Birra Fischer Chiara 0,4lt <span class="float-right text-green-700">€4,50</span></p>
+            </div>
+        </section>
+
+        <!-- Drink -->
+        <section id="drink" class="menu-category scroll-mt-16">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-cocktail text-3xl text-green-700 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Drink</h2>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Vodka Tonic</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Standard</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Vodka Premium Tonic</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Premium selection</span>
+                        <span class="text-lg font-semibold text-green-700">€10,00</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Gin Tonic</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Standard</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Gin Premium Tonic</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Premium selection</span>
+                        <span class="text-lg font-semibold text-green-700">€10,00</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Fusettone</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">bitter Fusetti, soda pompelmo premium</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Moscow Mule</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Vodka, ginger beer, lime</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Botanico spritz</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">aperol, prosecco, soda al pompelmo premium</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Lo "Chevalier"</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">aperitivo, chevalier rosati, prosecco Doc, soda</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Special Hugo</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Liquore al Sambuco premium, prosecco Doc, soda, menta</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Improved Kir Royal</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Creme de Cassis de borgogne, prosecco Doc, succo di lime, soda, gin</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Negroni</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Bitter campari, gin, vermounth rosso</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Mojito</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">rum, lime, zucchero, menta, soda</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Pink Mule</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Vodka, liquore allo zucchero, succo di lime, tonica</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Tommy's Passion fruit</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">tequila, purea di passion fruit, succo di lime, osda</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">20/20</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">midori, vodka alla pesca, lemon soda</span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Cocktail analcolico</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700"></span>
+                        <span class="text-lg font-semibold text-green-700">€7,00</span>
+                    </div>
+                </div>
+
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Spritz Aperol o Campari</h4>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700"></span>
+                        <span class="text-lg font-semibold text-green-700">€6,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
